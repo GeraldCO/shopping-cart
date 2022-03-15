@@ -1,23 +1,81 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import HomePage from './pages/HomePage';
+import Products from './pages/Products';
+import ProductDetails from './pages/ProductDetails';
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Outlet,
+  Link,
+  useSearchParams,
+  useParams,
+} from 'react-router-dom';
+import Header from './components/Header';
+import Cart from './components/Cart';
+
 
 function App() {
+  const [cart, setCart] = React.useState([]);
+  const [totalPrice, setTotalPrice] = React.useState(0);
+  const [showingCart, setShowingCart ] = React.useState(false);
+
+  React.useEffect(() => {
+    calculateTotalPrice();
+  },[cart]);
+
+  const calculateTotalPrice = function (){
+    let totalPrice = 0;
+    cart.map((e)=>{
+      return totalPrice = e.price + totalPrice;
+    });
+    setTotalPrice(totalPrice);
+  }
+
+  const changeCartVisiility =()=>{
+    setShowingCart(!showingCart);
+  }
+
+  function addItem (newItem){
+    setCart((prevState)=>{
+      return[
+        ...prevState,
+        newItem
+      ]
+    });
+    changeCartVisiility(true)
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {showingCart &&  <div className='div-background'></div> }
+      
+      <Cart 
+        showingCart={showingCart} 
+        changeCartVisiility={changeCartVisiility} 
+        cart={cart}
+        totalPrice={totalPrice}
+      />
+
+      <Header 
+        cartStatus = {cart} 
+        addItem={addItem} 
+        changeCartVisiility={changeCartVisiility}
+        
+      />
+      
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="products" element={<Products />} />
+          <Route path="products/:productId"
+            element={<ProductDetails
+                addItem={addItem} /> }
+          />
+          {/* <Route path="*" element={<NoMatch />} /> */}
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
