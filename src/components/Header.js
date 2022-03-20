@@ -8,12 +8,12 @@ export default function Header(props){
     return(
         <header>
             <h2>
-                <a href="/home">
+                <a href="/">
                     home
                 </a>
             </h2>
             <nav className='nav-menu'>
-                <a href="/producs">Products</a>
+                <a href="/products">Products</a>
                 <form action="#">
                     <input type="text" placeholder='search' />
                     <button type='button' className='header-button'>

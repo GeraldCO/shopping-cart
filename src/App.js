@@ -7,10 +7,6 @@ import {
   BrowserRouter,
   Routes,
   Route,
-  Outlet,
-  Link,
-  useSearchParams,
-  useParams,
 } from 'react-router-dom';
 import Header from './components/Header';
 import Cart from './components/Cart';
@@ -20,6 +16,7 @@ function App() {
   const [cart, setCart] = React.useState([]);
   const [totalPrice, setTotalPrice] = React.useState(0);
   const [showingCart, setShowingCart ] = React.useState(false);
+
 
   React.useEffect(() => {
     calculateTotalPrice();
@@ -44,34 +41,37 @@ function App() {
         newItem
       ]
     });
-    changeCartVisiility(true)
+    // changeCartVisiility(true)
   }
+
+
 
   return (
     <div className="App">
       {showingCart &&  <div className='div-background'></div> }
-      
+      <Header 
+        cartStatus = {cart} 
+        addItem={addItem} 
+        changeCartVisiility={changeCartVisiility}
+      />
+
       <Cart 
         showingCart={showingCart} 
         changeCartVisiility={changeCartVisiility} 
         cart={cart}
         totalPrice={totalPrice}
       />
-
-      <Header 
-        cartStatus = {cart} 
-        addItem={addItem} 
-        changeCartVisiility={changeCartVisiility}
-        
-      />
       
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/" element={<HomePage 
+          changeCartVisiility={changeCartVisiility}
+          />} />
           <Route path="products" element={<Products />} />
           <Route path="products/:productId"
             element={<ProductDetails
-                addItem={addItem} /> }
+                addItem={addItem}
+                 /> }
           />
           {/* <Route path="*" element={<NoMatch />} /> */}
         </Routes>

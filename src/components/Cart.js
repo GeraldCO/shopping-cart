@@ -1,4 +1,5 @@
 import React from 'react';
+import { gsap } from "gsap";
 
 function Cart (props) {
     const showingClass = props.showingCart ? '' : 'hide';
@@ -22,12 +23,16 @@ function Cart (props) {
                 <div className='item-item-price'>{item.price}</div>
             </div>
         )
-    }
+    }    
 
-    
+    const style={
+        opacity: !props.showingCart ? "0" : "1",
+        transition: "all 0.5s",
+        visibility: !props.showingCart ? "hidden" : "visible",
+      }
 
     return (
-        <div className={'cart-container '+ showingClass}>
+        <div style={style} className={'cart-container menu '+ showingClass} ref={props.divEl} >
             <button type='button' className='close-cart' onClick={()=>props.changeCartVisiility(false)} >x</button>
             <h3>
             Your shopping cart
