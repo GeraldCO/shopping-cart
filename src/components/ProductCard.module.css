@@ -1,15 +1,12 @@
-.main{
-    color : red;
-}
-
-
 .productCardContainer{
     border: 1px solid #F5F5F5;
     border-radius: 5px;
     background: #EAEDED;
     border: 1px solid red;
+    margin-top: 20px;
+    width: 15rem;
 }
-  
+
 .productCardContainer span{
 font-size: 14px;
 width: max-content;
@@ -18,19 +15,23 @@ padding: 0.25rem 0.5rem;
 }
 
 .productPictureContainer{
-height: 190px;
-width: 190px;
-display: flex;
-align-items: center;
-justify-content: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden
 }
 
 .productPictureContainer img{
-max-height: 230px;
-min-width: 190px;
+    flex-shrink: 0;
+    max-width: 60%;
+    max-height: 60%;
 }
 
 .rightBtn{
     margin-left: 10px;
+}
+
+.container{
+    margin-top: 15px;
 }
 

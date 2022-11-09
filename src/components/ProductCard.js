@@ -8,7 +8,7 @@ export default function ProductCard(props){
     return(
         <div className={classes.productCardContainer + " container"}>
 
-            <div className={classes.productPictureContainer}>
+            <div className={classes.productPictureContainer + ' d-flex justify-content-center' }>
                 <img src={gallery[0]} alt={name} />
             </div>
             <div className='d-flex'>
@@ -16,7 +16,7 @@ export default function ProductCard(props){
                     Black Friday
                 </span>
                 <span className='btn btn-outline-success ms-1'>
-                    Free Shipping 
+                    Free Shipping
                 </span>
             </div>
             <div>
