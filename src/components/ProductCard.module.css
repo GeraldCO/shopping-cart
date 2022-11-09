@@ -1,0 +1,36 @@
+.main{
+    color : red;
+}
+
+
+.productCardContainer{
+    border: 1px solid #F5F5F5;
+    border-radius: 5px;
+    background: #EAEDED;
+    border: 1px solid red;
+}
+  
+.productCardContainer span{
+font-size: 14px;
+width: max-content;
+margin: 0px;
+padding: 0.25rem 0.5rem;
+}
+
+.productPictureContainer{
+height: 190px;
+width: 190px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.productPictureContainer img{
+max-height: 230px;
+min-width: 190px;
+}
+
+.rightBtn{
+    margin-left: 10px;
+}
+

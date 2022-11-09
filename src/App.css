@@ -61,17 +61,24 @@ header h2{
   background: #EAEDED;
 }
 
+.product-card-container span{
+  font-size: 14px;
+  width: max-content;
+  margin: 0px;
+  padding: 0.25rem 0.5rem;
+}
+
 .product-picture-container{
-  min-height: 273px;
-  min-width: 273px;
+  height: 190px;
+  width: 190px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .product-picture-container img{
-  max-height: 273px;
-  max-width: 273px;
+  max-height: 230px;
+  min-width: 190px;
 }
 
 /*  product gallery style */
