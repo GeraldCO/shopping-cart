@@ -18,13 +18,15 @@ padding: 0.25rem 0.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden
+    overflow: hidden;
+    height: 190px;
 }
 
 .productPictureContainer img{
     flex-shrink: 0;
-    max-width: 60%;
-    max-height: 60%;
+    max-width: 100%;
+    max-height: 100%;
+    
 }
 
 .rightBtn{
@@ -35,3 +37,9 @@ padding: 0.25rem 0.5rem;
     margin-top: 15px;
 }
 
+.divPrice span{
+    color : red;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-weight: 700;
+}
