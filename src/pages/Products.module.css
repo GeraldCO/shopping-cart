@@ -2,3 +2,19 @@
     text-decoration: none;
      color: inherit;
 }
+
+.categories h4{
+    color: #66CB76;
+}
+
+.categories li{
+    font-weight: 500;
+}
+
+.categories{
+    list-style-type: none;
+}
+
+.categories li input{
+    color: red;
+}

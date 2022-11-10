@@ -2,7 +2,7 @@
     border: 1px solid #F5F5F5;
     border-radius: 5px;
     background: #EAEDED;
-    border: 1px solid red;
+    
     margin-top: 20px;
     width: 15rem;
 }
@@ -42,4 +42,34 @@ padding: 0.25rem 0.5rem;
     font-size: 1.25rem;
     line-height: 1.75rem;
     font-weight: 700;
+}
+
+.productName{
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 400;
+}
+
+.deliveryBlock{
+    display: block;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    font-weight: 400;
+    letter-spacing: 0.025rem;
+    margin-bottom: 0.5rem;
+    color: rgb(17, 128, 0);
+}
+
+.seller{
+    display: block;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    font-weight: 400;
+    letter-spacing: 0.025rem;
+    color: rgb(115, 115, 115);
+    margin-bottom: 0.5rem;
+}
+
+.seller span{
+    font-weight: bold;
 }

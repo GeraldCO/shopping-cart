@@ -1,12 +1,14 @@
 import React from 'react';
 import classes from './ProductCard.module.css';
+//import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+//import { faFacebook } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFacebook } from '@fortawesome/free-solid-svg-icons'
+import { solid, regular, brands, icon } from '@fortawesome/fontawesome-svg-core/import.macro' // <-- import styles to be used
+
 
 
 
 export default function ProductCard(props){
-    const element = <FontAwesomeIcon icon={faFacebook} />
     const {name, gallery, price} = props.product;
     return(
         <div className={classes.productCardContainer + " container"}>
@@ -22,21 +24,22 @@ export default function ProductCard(props){
                     Free Shipping
                 </span>
             </div>
-            <div>
-                <h4>{name}</h4>
+            <div className={classes.productName}>
+                <span>{name}</span>
             </div>
             <div className={classes.divPrice}>
                 <span>US$ {price}.00 </span>
             </div>
             <div className={classes.rating}>
-                {element}
-                <FontAwesomeIcon icon={faFacebook} />
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star"></span>
-                <span class="fa fa-star"></span>
-                <span>1866</span>
+                <FontAwesomeIcon icon={solid('star')} />
+                <FontAwesomeIcon icon={solid('star')} />
+                <FontAwesomeIcon icon={solid('star')} />
+                <FontAwesomeIcon icon={regular('star')} />
+                <FontAwesomeIcon icon={regular('star')} />
+                <span>(1866)</span>
             </div>
+            <p className={classes.deliveryBlock}>Receive it by tomorrow</p>
+            <p className={classes.seller}>sold by <span>pc components</span></p>
         </div>
         
     );
